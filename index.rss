@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rss version="2.0"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/" >
+<channel>
+<title>News</title>
+<link>http://asherikov.github.com/index.html</link>
+<description>A. Sherikov</description>
+<item>
+
+	<title>Added description of the walking module for Nao</title>
+
+
+	<guid isPermaLink="no">http://asherikov.github.com/news/first.html</guid>
+
+	<link>http://asherikov.github.com/news/first.html</link>
+
+	<pubDate>Tue, 20 Mar 2012 18:52:21 +0300</pubDate>
+	<dcterms:modified>2012-03-20T16:40:37Z</dcterms:modified>
+
+	<description>&lt;p&gt;See &lt;a href=&quot;http://asherikov.github.com/./Projects/naowalk.html&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+</description>
+
+
+</item>
+
+</channel>
+</rss>
