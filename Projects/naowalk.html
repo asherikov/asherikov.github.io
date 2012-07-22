@@ -92,8 +92,6 @@ Nao walking module
 		</li>
 		<li class="L2"><a href="#index7h2">Publications</a>
 		</li>
-		<li class="L2"><a href="#index8h2">Other</a>
-		</li>
 	</ol>
 </div>
 
@@ -107,9 +105,11 @@ which uses this solver to control walking behavior of a
 <a href="http://www.aldebaran-robotics.com">Nao</a> humanoid robot.</p>
 
 <p>The development has been performed within the
-<a href="http://www.aass.oru.se/Research/Learning/index.html">Mobile Robotics and Olfaction Lab </a>
-at &Ouml;rebro University under the supervision of <a href="http://www.drdv.net">Dimitar Dimitrov
-</a>.</p>
+<a href="http://www.aass.oru.se/Research/Learning/index.html">Mobile Robotics and Olfaction Lab</a>
+at &Ouml;rebro University under the supervision of <a href="http://www.drdv.net">Dimitar Dimitrov</a>.</p>
+
+<p>All related derivations, a more detailed description of results and implementation
+can be found in my <a href="http://asherikov.github.com/files/asherikov-ms-thesis.pdf">Master's thesis</a>.</p>
 
 <hr />
 
@@ -198,10 +198,11 @@ frameborder="0" allowfullscreen>
 <li><p>MPC solver:</p>
 
 <ul>
-<li>penalty for the velocity of CoM = 1;</li>
 <li>gain for reference ZMP positions = 8000 (reference ZMP positions are centers of
 footsteps);</li>
-<li>penalty for the jerk of CoM = 1 (jerk is a control input);</li>
+<li>penalty for the velocity of CoM = 1;</li>
+<li>penalty for the acceleration of CoM = 1;</li>
+<li>penalty for the jerk of CoM = 1 (jerk is the control input);</li>
 </ul></li>
 <li><p>Steps:</p>
 
@@ -226,14 +227,7 @@ foot, i.e. full step length is 0.08);</li>
   <a href="http://asherikov.github.com/oru_walk_module/pArch.html#pIGM">here</a>) we need to get
   positions of CoM at 20 ms and 40 ms (one and two control loops respectively). 
   Therefore we set the length of the first two sampling intervals in a preview window 
-  to 20 ms, consequently, one of the remaining intervals switches between 20 and 40 ms. 
-  The total length of preview window is 2*20 + 37*40 + 40 or 20 = 1560 or 1540 ms. </p>
-  
-  <p>Also, we can use the same sampling interval (20 ms.) in a preview window. In this case
-  if the number of sampling intervals is not changed, the length of a preview window is 
-  significantly shorter and a robot does not compensate for external disturbances as 
-  well. On the other hand, if the number of sampling intervals is increased, a solution
-  of a bigger QP problem takes more time.</p>
+  to 20 ms.</p>
 </blockquote>
 
 <hr />
@@ -242,33 +236,71 @@ foot, i.e. full step length is 0.08);</li>
 
 <p>The data was collected during execution on the Nao v3.2, which is equipped with
 AMD GEODE 500MHz CPU. No external disturbances were applied. Note that we use a 
-real time scheduling policy (SCHED_FIFO) for the <a href="http://asherikov.github.com/oru_walk_module/pArch.html#pControlThread">control thread 
-</a>. </p>
+real time scheduling policy (SCHED_FIFO).</p>
 
 <p>The execution time of one control loop (in seconds):</p>
 
-<ul>
-<li>min = 0.001997</li>
-<li>max = 0.005083</li>
-<li>mean = 0.003591</li>
-</ul>
+<table border="1">
+<tr>
+    <td></td>
+    <td>Active set method</td>
+    <td>Logarithmic barrier method</td>
+</tr>
+<tr>
+    <td>min</td>
+    <td>0.001867</td>
+    <td>0.004108</td>
+</tr>
+<tr>
+    <td>mean</td>
+    <td>0.003071</td>
+    <td>0.004834</td>
+</tr>
+<tr>
+    <td>max</td>
+    <td>0.004650</td>
+    <td>0.006012</td>
+</tr>
+</table>
 
 <p>This time includes:</p>
 
 <ul>
 <li>Logging (takes about 0.0005 sec.).</li>
-<li>Solution of MPC problem.
+<li>Solution of the QP problem</li>
+</ul>
+
+<table border = "1">
+<tr>
+    <td></td>
+    <td>Active set method</td>
+    <td>Logarithmic barrier method</td>
+</tr>
+<tr>
+    <td>min</td>
+    <td>0.000490</td>
+    <td>0.002569</td>
+</tr>
+<tr>
+    <td>mean</td>
+    <td>0.001259</td>
+    <td>0.003016</td>
+</tr>
+<tr>
+    <td>max</td>
+    <td>0.002782</td>
+    <td>0.004126</td>
+</tr>
+</table>
+
 <ul>
-<li>min = 0.000540</li>
-<li>max = 0.003133</li>
-<li>mean = 0.001761</li>
-</ul></li>
 <li>Two solutions of inverse kinematics.</li>
 </ul>
 
-<p>The QP solver uses active set method and activates from 0 to 7 constraints. In 
-the initial and final double supports constraints are not added, during the walk 
-the number of constraints is usually 6 or 7. The solver is not hot-started.</p>
+<p>Active set method activates from 0 to 7 constraints. In the initial and final double supports 
+constraints are not added, during the walk the number of constraints is usually 6 or 7. </p>
+
+<p>The solver is not hot-started.</p>
 
 <p>Solution of inverse kinematics takes from 1 to 3 iterations.</p>
 
@@ -298,14 +330,6 @@ the number of constraints is usually 6 or 7. The solver is not hot-started.</p>
 
 <p></p>
 
-<hr />
-
-<h2><a name="index8h2"></a>Other</h2>
-
-<p>A simple Nao module, that was used to collect data while a robot is controlled by
-the original walking module included in the standard software: <br />
-<a href="https://github.com/asherikov/nao_spy">https://github.com/asherikov/nao_spy</a></p>
-
 </div>
 
 
@@ -326,6 +350,8 @@ Links:
 
 <a href="../news/first.html">news/first</a>
 
+<a href="../news/msthesis.html">news/msthesis</a>
+
 
 </div>
 
@@ -335,8 +361,8 @@ Links:
 
 
 <div class="pagedate">
-Last edited <span class="date">Mon Mar 26 15:36:57 2012</span>
-<!-- Created <span class="date">Tue Mar 20 18:05:48 2012</span> -->
+Last edited <span class="date">Sun Jul 22 22:40:55 2012</span>
+<!-- Created <span class="date">Tue Mar 20 19:05:48 2012</span> -->
 </div>
 
 </div>
