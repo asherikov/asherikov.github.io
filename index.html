@@ -1,59 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>News</title>
+<meta charset="utf-8" />
+<title>Alexander Sherikov</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 <link rel="stylesheet" href="local.css" type="text/css" />
 
 
-<link rel="alternate" type="application/rss+xml" title="A. Sherikov (RSS feed)" href="index.rss" />
+
+
+
+
+<meta name="description" content="Home" />
+
 
 
 </head>
-<body>
+<body><script src="./ikiwiki/ikiwiki.js" type="text/javascript" charset="utf-8"></script>
+<script src="./ikiwiki/toggle.js" type="text/javascript" charset="utf-8"></script>
 
-<div class="page">
+<article class="page">
 
-<div class="pageheader">
-<div class="header">
+<section class="pageheader">
+<header class="header">
 <span>
 <span class="parentlinks">
 
 </span>
 <span class="title">
-News
+Alexander Sherikov
 
 </span>
 </span>
 
-</div>
+
+
+</header>
 
 
 
 
 
-</div>
 
 
-<div class="sidebar">
+
+
+</section>
+
+
+
+<aside class="sidebar">
 <p><strong>Sitemap</strong></p>
 
 <div class='map'>
 <ul>
-<li><span class="createlink">Projects</span>
+<li>
+<span class="createlink">Projects</span>
 <ul>
-</li>
-<li><a href="./Projects/naowalk.html" class="mapitem">Nao walking module</a>
+<li>
+<a href="./Projects/naowalk.html" class="mapitem">Nao walking module</a>
 </li>
 </ul>
 </li>
-<li><span class="selflink">News</span>
+<li>
+<span class="selflink">Home</span>
 </li>
 </ul>
 </div>
@@ -63,49 +77,201 @@ News
 <p>Alexander Sherikov <br />
 <em>asherikov {at} yandex.com</em></p>
 
-</div>
+</aside>
+
 
 
 <div id="pagebody">
 
-<div id="content">
-<div  class="feedlink">
+<section id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">About</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Contacts</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index2h1">Publications</a>
+	<ol>
+		<li class="L2"><a href="#index2h2">Under review</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Journals & Conferences</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Theses</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
 
-<a class="feedbutton" type="application/rss+xml" rel="alternate" title="A. Sherikov (RSS feed)" href="index.rss">RSS</a>
+<h1><a name="index1h1"></a>About</h1>
+
+<p>Currently, I am a PhD student at <a href="http://bipop.inrialpes.fr/">BIPOP</a> team (INRIA, Greboble, France),
+where I am working on control of humanoid robots
+under supervision of <a href="http://www.inrialpes.fr/bipop/people/wieber/">Pierre-Brice Wieber</a>
+and <a href="http://drdv.net/index.html">Dimitar Dimitrov</a>.
+I obtained my master's degree from
+<a href="http://oru.se">Örebro University</a> in 2012. The subject of the master's thesis was model
+predictive control of a humanoid robot, refer to <a href="./Projects/naowalk.html">this page</a> for more 
+information. After gradutation I participated in 
+<a href="http://www.oru.se/English/Research/Research-Subjects/NT/Computer-Science/Computer-Science/Forskningsprojekt-inom-Datavetenskap/Forskningsprojekt-inom-Datavetenskap/?rdb=693">SAUNA project</a>
+at Örebro University as a developer of a trajectory tracking controller for an autonomous forklift truck.</p>
+
+<h2><a name="index1h2"></a>Contacts</h2>
+
+<table border="0">
+<tr>
+    <td>E-mail:</td>
+    <td>asherikov {at} yandex.com</td>
+</tr>
+<tr>
+    <td></td>
+    <td>alexander.sherikov {at} inria.fr</td>
+</tr>
+<tr>
+    <td>XMPP (Gmail compatible):</td>
+    <td>asherikov {at} jabber.ru</td>
+</tr>
+</table>
+
+<hr />
+
+<h1><a name="index2h1"></a>Publications</h1>
+
+<h2><a name="index2h2"></a>Under review</h2>
+
+<ul>
+<li>Dimitrov, Sherikov, Wieber. <strong>Efficient resolution of potentially conflicting linear constraints in robotics.</strong> 
+<a class="toggle" href="#index.Dimitrov2015tro">(bibtex)</a>
+<a href="https://hal.inria.fr/hal-01183003/file/drdv_tro.pdf"> (pdf)</a> <a href="https://hal.inria.fr/hal-01183003">(more)</a></li>
+</ul>
+
+<div class="toggleable" id="index.Dimitrov2015tro">
+
+<pre id='bibtex_entry'>@unpublished{Dimitrov2015tro,
+  title = {{Efficient resolution of potentially conflicting linear constraints in robotics}},
+  author = {Dimitrov, Dimitar and Sherikov, Alexander and Wieber, Pierre-Brice},
+  url = {https://hal.inria.fr/hal-01183003},
+  note = {Submitted to IEEE TRO (05/August/2015)},
+  year = {2015},
+  pdf = {https://hal.inria.fr/hal-01183003/file/drdv_tro.pdf},
+  hal_id = {hal-01183003},
+  hal_version = {v1},
+}
+
+</pre>
+
+</div>
+
+<h2><a name="index3h2"></a>Journals & Conferences</h2>
+
+<h3><a name="index1h3"></a>2015</h3>
+
+<ul>
+<li>Andreasson, Bouguerra, Cirillo, Dimitrov, Driankov, Karlsson, Lilienthal, Pecora, Saarinen, Sherikov, Stoyanov. <strong>Autonomous Transport Vehicles: Where We Are and What Is Missing.</strong> <em>Robotics Automation Magazine, IEEE.</em> 
+<a class="toggle" href="#index.Andreasson2015ram">(bibtex)</a>
+<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?reload=true&amp;tp=&amp;arnumber=7059356"> (pdf)</a></li>
+</ul>
+
+<div class="toggleable" id="index.Andreasson2015ram">
+
+<pre id='bibtex_entry'>@article{Andreasson2015ram,
+  author = {Andreasson, H. and Bouguerra, A. and Cirillo, M. and Dimitrov, D.N. and Driankov, D. and Karlsson, L. and Lilienthal, A.J. and Pecora, F. and Saarinen, J.P. and Sherikov, A. and Stoyanov, T.},
+  journal = {Robotics Automation Magazine, IEEE},
+  title = {Autonomous Transport Vehicles: Where We Are and What Is Missing},
+  year = {2015},
+  volume = {22},
+  number = {1},
+  pages = {64-75},
+  month = {March},
+}
+
+</pre>
+
+</div>
+
+<h3><a name="index2h3"></a>2014</h3>
+
+<ul>
+<li>Sherikov, Dimitrov, Wieber. <strong>Whole body motion controller with long-term balance constraints.</strong> <em>Humanoid Robots (Humanoids), 2014 14th IEEE-RAS International Conference on.</em> 
+<a class="toggle" href="#index.Sherikov2014humanoids">(bibtex)</a>
+<a href="http://drdv.net/pdf/humanoids14.pdf"> (pdf)</a></li>
+</ul>
+
+<div class="toggleable" id="index.Sherikov2014humanoids">
+
+<pre id='bibtex_entry'>@inproceedings{Sherikov2014humanoids,
+  author = {Sherikov, A. and Dimitrov, D. and Wieber, P.-B.},
+  booktitle = {Humanoid Robots (Humanoids), 2014 14th IEEE-RAS International Conference on},
+  title = {Whole body motion controller with long-term balance constraints},
+  year = {2014},
+  month = {Nov},
+  pages = {444-450},
+}
+
+</pre>
+
+</div>
+
+<h3><a name="index3h3"></a>2011</h3>
+
+<ul>
+<li>Dimitrov, Sherikov, Wieber. <strong>A sparse model predictive control formulation for walking motion generation.</strong> <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).</em> 
+<a class="toggle" href="#index.Dimitrov2011iros">(bibtex)</a>
+<a href="http://drdv.net/pdf/iros11_1.pdf"> (pdf)</a> <a href="./Projects/naowalk.html">(more)</a></li>
+</ul>
+
+<div class="toggleable" id="index.Dimitrov2011iros">
+
+<pre id='bibtex_entry'>@inproceedings{Dimitrov2011iros,
+  author = {Dimitrov, D. and Sherikov, A. and Wieber, P.-B.},
+  title = {{A sparse model predictive control formulation for walking motion generation}},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages = {2292-2299},
+  year = {2011},
+}
+
+</pre>
+
+</div>
+
+<h2><a name="index4h2"></a>Theses</h2>
+
+<ul>
+<li>Sherikov. <strong>Model predictive control of a walking bipedal robot using online optimization.</strong> 
+<a class="toggle" href="#index.Sherikov2012master">(bibtex)</a>
+<a href="http://asherikov.github.com/files/asherikov-ms-thesis.pdf"> (pdf)</a> <a href="./Projects/naowalk.html">(more)</a></li>
+</ul>
+
+<div class="toggleable" id="index.Sherikov2012master">
+
+<pre id='bibtex_entry'>@mastersthesis{Sherikov2012master,
+  author = {Alexander Sherikov},
+  title = {Model predictive control of a walking bipedal robot using online optimization},
+  school = {\"Orebro University},
+  year = {2012},
+}
+
+</pre>
+
+</div>
+
+</section>
+
+
+
+
+
 
 
 </div>
-<p>
 
-<a href="./news/msthesis.html">Uploaded MS thesis. Updated project page of Nao walking module.</a><br />
+<footer id="footer" class="pagefooter" role="contentinfo">
 
-<i>
-Posted <span class="date">Sun Jul 22 22:19:07 2012</span>
-
-</i>
-</p>
-<p>
-
-<a href="./news/first.html">Added description of the walking module for Nao</a><br />
-
-<i>
-Posted <span class="date">Tue Mar 20 19:52:21 2012</span>
-
-</i>
-</p>
+<nav id="pageinfo">
 
 
-</div>
-
-
-
-
-
-</div>
-
-<div id="footer" class="pagefooter">
-
-<div id="pageinfo">
 
 
 
@@ -116,17 +282,17 @@ Posted <span class="date">Tue Mar 20 19:52:21 2012</span>
 
 
 <div class="pagedate">
-Last edited <span class="date">Tue Mar 20 19:37:45 2012</span>
-<!-- Created <span class="date">Tue Mar 20 00:43:04 2012</span> -->
+Last edited <time datetime="2015-08-27T13:45:32Z">Thu Aug 27 13:45:32 2015</time>
+<!-- Created <time datetime="2015-08-27T13:45:32Z" pubdate="pubdate">Thu Aug 27 13:45:32 2015</time> -->
 </div>
 
-</div>
+</nav>
 
 
-<!-- from A. Sherikov -->
-</div>
+<!-- from Alexander Sherikov -->
+</footer>
 
-</div>
+</article>
 
 </body>
 </html>
